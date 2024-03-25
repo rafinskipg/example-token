@@ -2,6 +2,8 @@
 
 First, rename `.env.example` to `.env` and set the environment variables.
 
+You will need an Alchemy API key, a wallet private key with funds, and a basescan API key.
+
 ```bash
 cp .env.example .env
 ```
