@@ -27,7 +27,7 @@ if (!key) {
 
 const config: HardhatUserConfig = {
   solidity: {
-    version: "0.8.17",
+    version: "0.8.25",
     settings: {
       optimizer: {
         enabled: true,
@@ -37,14 +37,23 @@ const config: HardhatUserConfig = {
   },
   etherscan: {
     apiKey: process.env.BASESCAN_API_KEY,
+    customChains: [
+      {
+        network: "base",
+        chainId: 8453,
+        urls: {
+          apiURL: "https://api.basescan.org/api",
+          browserURL: "https://basescan.org"
+        }
+      }
+    ]
   },
 
   networks: {
     hardhat: {
       chainId: 1337,
-
     },
-    testnet: {
+    basesepolia: {
       url: `https://base-sepolia.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
       accounts: [`${process.env.WALLET_PRIVATE_KEY}`],
     },

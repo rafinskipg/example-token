@@ -18,12 +18,13 @@ async function main() {
   }
 
   const OneBillion = parseEther("1000000000");
-  const DeployerAmount = parseEther("10000000");
+
+  const devAddress = "0x1111111111111111111111111111111111111111";
 
   const Contract = await ethers.getContractFactory("ExampleToken");
   const contract = await Contract.connect(signer).deploy(
     OneBillion,
-    DeployerAmount
+    devAddress
   );
 
   await contract.deployed();
@@ -31,8 +32,10 @@ async function main() {
   console.log(`Contract deployed to ${contract.address}`);
   const networkName = network.name == "unknown" ? "localhost" : network.name;
 
+  console.log("PLEASE, RUN THE FOLLOWING COMMAND TO VERIFY THE CONTRACT. --- ")
+
   console.log(
-    `npx hardhat verify --network ${networkName} ${contract.address} ${OneBillion} ${DeployerAmount}}`
+    `npx hardhat verify --network mainnet ${contract.address} ${OneBillion} ${devAddress}`
   );
 }
 

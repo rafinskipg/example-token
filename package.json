@@ -10,8 +10,8 @@
     "hardhat:mainnet": "npx hardhat node ",
     "test": "npx hardhat test ",
     "testnet": "run-p hardhat:mainnet  ",
-    "deploy": "npx hardhat run scripts/deploy.js --network localhost ",
-    "deploy:testnet": "npx hardhat run scripts/deploy.js --network testnet ",
+    "deploy": "npx hardhat run scripts/deploy.ts --network localhost ",
+    "deploy:testnet": "npx hardhat run scripts/deploy.ts --network basesepolia ",
     "deploy:mainnet": "npx hardhat run scripts/deploy.ts --network mainnet "
   },
   "dependencies": {
