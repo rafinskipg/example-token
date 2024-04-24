@@ -36,7 +36,7 @@ const config: HardhatUserConfig = {
     },
   },
   etherscan: {
-    apiKey: process.env.BASESCAN_API_KEY,
+    apiKey: process.env.ETHERSCAN_API_KEY,
     customChains: [
       {
         network: "base",
@@ -52,6 +52,11 @@ const config: HardhatUserConfig = {
   networks: {
     hardhat: {
       chainId: 1337,
+      /* forking: {
+        // url: `https://arb-mainnet.g.alchemy.com/v2/${process.env.ARBITRUM_ALCHEMY_API_KEY}`,
+        url: `https://arbitrum-mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
+      }, */
+
     },
     basesepolia: {
       url: `https://base-sepolia.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
@@ -60,7 +65,11 @@ const config: HardhatUserConfig = {
     mainnet: {
       url: `https://base-mainnet.g.alchemy.com/v2/${process.env.BASE_ALCHEMY_API_KEY}`,
       accounts: [`${process.env.WALLET_PRIVATE_KEY}`],
-    }
+    },
+    arbitrum: {
+      url: `https://arb-mainnet.g.alchemy.com/v2/${process.env.ARBITRUM_ALCHEMY_API_KEY}`,
+      accounts: [`${process.env.WALLET_PRIVATE_KEY}`],
+    },
   },
 };
 
