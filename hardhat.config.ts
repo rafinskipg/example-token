@@ -1,6 +1,5 @@
 import * as dotenv from "dotenv";
 
-
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
 // require("@nomiclabs/hardhat-ethers");
@@ -10,7 +9,7 @@ import * as dotenv from "dotenv";
 
 import { HardhatUserConfig, task } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
-import '@openzeppelin/hardhat-upgrades';
+import "@openzeppelin/hardhat-upgrades";
 
 import "@nomiclabs/hardhat-etherscan";
 import "hardhat-gas-reporter";
@@ -18,12 +17,11 @@ import "solidity-coverage";
 
 dotenv.config();
 
-const key = process.env.BASE_ALCHEMY_API_KEY;
+const key = process.env.ALCHEMY_API_KEY;
 
 if (!key) {
-  throw new Error("Missing BASE_ALCHEMY_API_KEY environment variable");
+  throw new Error("Missing ALCHEMY_API_KEY environment variable");
 }
-
 
 const config: HardhatUserConfig = {
   solidity: {
@@ -43,10 +41,10 @@ const config: HardhatUserConfig = {
         chainId: 8453,
         urls: {
           apiURL: "https://api.basescan.org/api",
-          browserURL: "https://basescan.org"
-        }
-      }
-    ]
+          browserURL: "https://basescan.org",
+        },
+      },
+    ],
   },
 
   networks: {
@@ -56,7 +54,6 @@ const config: HardhatUserConfig = {
         // url: `https://arb-mainnet.g.alchemy.com/v2/${process.env.ARBITRUM_ALCHEMY_API_KEY}`,
         url: `https://arbitrum-mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
       }, */
-
     },
     basesepolia: {
       url: `https://base-sepolia.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
@@ -72,6 +69,5 @@ const config: HardhatUserConfig = {
     },
   },
 };
-
 
 export default config;

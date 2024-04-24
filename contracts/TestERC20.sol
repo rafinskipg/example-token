@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 
 contract TestERC20 is ERC20, ERC20Burnable {
-    constructor() ERC20("TestERC20", "DEAGLE") {}
+    constructor() ERC20("TestERC20", "Example") {}
 
     function mint(uint256 amount, address receiver) public {
         _mint(receiver, amount);

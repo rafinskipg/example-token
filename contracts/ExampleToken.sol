@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: Unlicense
-pragma solidity ^0.8.25;
+pragma solidity ^0.8.17;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 /*
@@ -21,7 +20,7 @@ Telegram: https://t.me/testtoken
 
 */
 
-contract ExampleToken is Ownable, ERC20, ReentrancyGuard {
+contract ExampleToken is ERC20, ReentrancyGuard {
     //=======================================
     // Constructor
     //======================================
