@@ -32,10 +32,10 @@ async function main() {
   console.log(`Contract deployed to ${contract.address}`);
   const networkName = network.name == "unknown" ? "localhost" : network.name;
 
-  console.log("PLEASE, RUN THE FOLLOWING COMMAND TO VERIFY THE CONTRACT. --- ")
+  console.log("PLEASE, RUN THE FOLLOWING COMMAND TO VERIFY THE CONTRACT. --- ");
 
   console.log(
-    `npx hardhat verify --network mainnet ${contract.address} ${OneBillion} ${devAddress}`
+    `npx hardhat verify --network ${networkName} ${contract.address} ${OneBillion} ${devAddress}`
   );
 }
 

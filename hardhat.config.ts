@@ -60,11 +60,11 @@ const config: HardhatUserConfig = {
       accounts: [`${process.env.WALLET_PRIVATE_KEY}`],
     },
     mainnet: {
-      url: `https://base-mainnet.g.alchemy.com/v2/${process.env.BASE_ALCHEMY_API_KEY}`,
+      url: `https://base-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
       accounts: [`${process.env.WALLET_PRIVATE_KEY}`],
     },
     arbitrum: {
-      url: `https://arb-mainnet.g.alchemy.com/v2/${process.env.ARBITRUM_ALCHEMY_API_KEY}`,
+      url: `https://arb-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
       accounts: [`${process.env.WALLET_PRIVATE_KEY}`],
     },
   },
